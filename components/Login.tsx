@@ -3,7 +3,6 @@ import { View, TextInput, Text, TouchableOpacity, Image } from "react-native";
 import { cursorColor, loginStyles } from "../styles/loginStyles";
 import { login } from "../apis/ecom-apis";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useFocusEffect } from "@react-navigation/native";
 
 const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -15,9 +14,8 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
     const response = await login(userDetails);
     const data = await response.json();
     if (response.ok === true) {
-      console.log('Method');
       onSubmitSuccess(data.jwt_token);
-      navigation.navigate("Home");
+      navigation.navigate("HomePage");
     } else {
       setErrorMsg(data.error_msg);
     }
