@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import { ProductState, ProductsPayload } from '../types/ecom-types';
 import { getAllProducts } from '../apis/ecom-apis';
 import { sortbyOptions } from '../constants/constants';
-import { FlatList, ScrollView, Text, View } from 'react-native';
+import { FlatList, Image, ScrollView, Text, View } from 'react-native';
 import PrimeDeals from './prime-deals';
+import { product } from '../styles/product-styles';
+import { Ionicons } from '@expo/vector-icons';
 
 const Products = () => {
 
@@ -33,19 +35,35 @@ const Products = () => {
         return <Text>Loading...</Text>;
     }
     return (
-        <View>
+        <View style={{flex: 1}}>
             <PrimeDeals />
-            {/* <FlatList
-                data={productState.products}
-                renderItem={(item) => {
-                    return (
-                        <View>
-                            <Text>{item.item.title}</Text>
-                        </View>
-                    )
-                }}
-                keyExtractor={(item, index) => index.toString()}
-            /> */}
+            <Text style={product.primeDealsHeading}>Products</Text>
+            <View style={product.productContainer}>
+                <FlatList
+                    data={productState.products}
+                    renderItem={(item) => {
+                        return (
+                            <View style={product.productCard}>
+                                <Image
+                                    source={{ uri: item.item.imageUrl }}
+                                    style={product.productImg}
+                                />
+                                <View style={product.productDetails}>
+                                    <Text numberOfLines={undefined} style={product.productTitle}>{item.item.title}</Text>
+                                    <Text style={product.productBrand}>{item.item.brand}</Text>
+                                    <Text style={product.productPrice}>₹ {item.item.price}/-</Text>
+                                    <Text style={product.productRating}>
+                                        <Ionicons name="star" color={'green'} size={12} />
+                                        {item.item.rating}
+                                    </Text>
+                                    <Text>{item.item.description}</Text>
+                                </View>
+                            </View>
+                        )
+                    }}
+                    keyExtractor={(item, index) => index.toString()}
+                />
+            </View>
         </View>
     );
 };

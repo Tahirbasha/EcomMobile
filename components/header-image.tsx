@@ -1,6 +1,6 @@
 import React from "react";
 import { View, TouchableOpacity, Image } from "react-native";
-import { homeScreenStyles } from "../styles/homeScreenStyles";
+import { homeScreenStyles } from "../styles/home-screen-styles";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";

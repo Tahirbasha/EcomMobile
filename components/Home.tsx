@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, SafeAreaView, Image, View, Button, TouchableOpacity } from 'react-native';
-import { homeScreenStyles } from '../styles/homeScreenStyles';
+import { homeScreenStyles } from '../styles/home-screen-styles';
 
 
 const Home = (props: {navigation: any}) => {

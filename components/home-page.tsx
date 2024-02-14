@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { View, Text, Button, ScrollView, Image, TouchableOpacity } from "react-native";
-import { homeScreenStyles } from "../styles/homeScreenStyles";
+import { homeScreenStyles } from "../styles/home-screen-styles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from '@expo/vector-icons';

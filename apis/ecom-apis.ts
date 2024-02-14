@@ -7,7 +7,6 @@ export const login = async (loginCredentials: { username: string, password: stri
     method: "POST",
     body: JSON.stringify(loginCredentials),
   };
-  console.log('body:' , options.body);
   const response = await fetch(url, options);
   return response
 }
@@ -49,7 +48,7 @@ export const getPrimeProducts = async () => {
     method: 'GET',
   }
   const response = await fetch(apiUrl, options)
-  if (response.ok === true) {
+  if (response.ok) {
     const fetchedData = await response.json()
     const updatedData: Product[] = fetchedData.prime_deals.map((product: any) => ({
       title: product.title,
@@ -59,6 +58,6 @@ export const getPrimeProducts = async () => {
       imageUrl: product.image_url,
       rating: product.rating,
     }));
-    return fetchedData;
+    return updatedData;
   }
 }

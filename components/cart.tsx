@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Button, Image, View } from 'react-native';
-import cartStyles from '../styles/cartStyles';
+import cartStyles from '../styles/cart-styles';
 
 
 const Cart = (props: {navigation:any}) => {

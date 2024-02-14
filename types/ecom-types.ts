@@ -12,6 +12,7 @@ export interface Product {
     price: number;
     imageUrl: string;
     rating: string;
+    description: string;
 };
 
 export interface ProductState {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, TextInput, Text, TouchableOpacity, Image } from "react-native";
-import { cursorColor, loginStyles } from "../styles/loginStyles";
+import { cursorColor, loginStyles } from "../styles/login-styles";
 import { login } from "../apis/ecom-apis";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
