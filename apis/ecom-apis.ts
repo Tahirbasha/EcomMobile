@@ -60,4 +60,37 @@ export const getPrimeProducts = async () => {
     }));
     return updatedData;
   }
+};
+
+export const getProductDetails= async (productId: number) => {
+
+  const jwtToken = await AsyncStorage.getItem('Token');
+  const apiUrl = `https://apis.ccbp.in/products/${productId}`
+  const options = {
+    headers: {
+      Authorization: `Bearer ${jwtToken}`,
+    },
+    method: 'GET',
+  }
+  const response = await fetch(apiUrl, options)
+  if (response.ok) {
+    const fetchedData = await response.json()
+    const updatedData = getFormattedData(fetchedData)
+    const updatedSimilarProductsData = fetchedData.similar_products.map(
+      (eachSimilarProduct: any) => getFormattedData(eachSimilarProduct),
+    )
+    return {productDetails: updatedData, similarProducts: updatedSimilarProductsData};
+  }
 }
+
+const getFormattedData = (data:any) => ({
+  id: data.id,
+  title: data.title,
+  imageUrl: data.image_url,
+  brand: data.brand,
+  price: data.price,
+  availability: data.availability,
+  description: data.description,
+  rating: data.rating,
+  totalReviews: data.total_reviews,
+});

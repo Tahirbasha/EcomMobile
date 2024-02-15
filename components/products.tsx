@@ -50,12 +50,17 @@ const Products = () => {
                                 />
                                 <View style={product.productDetails}>
                                     <Text numberOfLines={undefined} style={product.productTitle}>{item.item.title}</Text>
-                                    <Text style={product.productBrand}>{item.item.brand}</Text>
+                                    <Text style={product.productBrand}>by {item.item.brand}</Text>
                                     <Text style={product.productPrice}>₹ {item.item.price}/-</Text>
-                                    <Text style={product.productRating}>
-                                        <Ionicons name="star" color={'green'} size={12} />
-                                        {item.item.rating}
-                                    </Text>
+                                    <View style={product.ratingContainer}>
+                                        <Text style={product.productRating}>
+                                            {item.item.rating}
+                                        </Text>
+                                        <Image 
+                                        source={{uri: 'https://assets.ccbp.in/frontend/react-js/star-img.png'}}
+                                        style={product.ratingStar}
+                                        />
+                                    </View>
                                     <Text>{item.item.description}</Text>
                                 </View>
                             </View>

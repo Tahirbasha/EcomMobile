@@ -19,3 +19,20 @@ export interface ProductState {
     products: Product[];
     isLoading: boolean;
 }
+
+export interface ProductDetailedInfo {
+    id: number;
+    title: string;
+    imageUrl: string;
+    brand: string;
+    price: number;
+    availability: string;
+    description: string;
+    rating: number;
+    totalReviews: number;
+}
+
+export interface ProductDetailsState {
+    productDetails: ProductDetailedInfo;
+    similarProducts?: ProductDetailedInfo;
+}

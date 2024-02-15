@@ -37,24 +37,44 @@ export const product = StyleSheet.create({
     productDetails: {
         width: '45%',
         paddingRight: 2,
+        justifyContent: 'space-evenly'
     },
     productTitle: {
         fontSize:20
     },
     productBrand: {
-        fontSize: 20
+        fontSize: 20,
+        color: '#594d6d',
     },
     productPrice: {
-        fontSize: 18
+        fontSize: 18,
+        fontWeight: '500'
     },
     productRating: {
         fontSize: 15,
         fontWeight: '600',
-        color: 'green'
+        color: '#fff'
     },
     productContainer : {
         // marginBottom: 1500
         // flex: 1
+    },
+    ratingContainer: {
+        flexDirection: 'row',
+        alignItems:'center',
+        backgroundColor: '#3b82f6',
+        padding: 5,
+        borderRadius: 5,
+        width: '25%'
+    },
+    ratingStar: {
+        marginHorizontal: 2,
+        height: 12,
+        width: 12
+    },
+    detailedProductImg : {
+        height: 250,
+        width: 250
     }
 
 });

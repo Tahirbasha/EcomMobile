@@ -5,32 +5,36 @@ import LoginScreen from './components/login';
 import Homepage from "./components/home-page";
 import { StatusBar, ScrollView, TouchableOpacity } from "react-native";
 import { HeaderImage } from "./components/header-image";
+import ProductDetails from "./components/product-details";
 
 const Stack = createNativeStackNavigator();
 
 const App: React.FC = () => {
   return (
-    // <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="HomePage"
-            component={Homepage}
-            options={{ header: () => <HeaderImage /> }}
-          />
-        </Stack.Navigator>
-        <StatusBar
-          translucent
-          backgroundColor='transparent'
-          // hidden 
-          barStyle="dark-content" />
-      </NavigationContainer>
-    // </ScrollView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HomePage"
+          component={Homepage}
+          options={{ header: () => <HeaderImage /> }}
+        />
+        <Stack.Screen
+          name="ProductDetails"
+          component={ProductDetails}
+          options={{ header: () => <HeaderImage /> }}
+        />
+      </Stack.Navigator>
+      <StatusBar
+        translucent
+        backgroundColor='transparent'
+        // hidden 
+        barStyle="dark-content" />
+    </NavigationContainer>
   );
 };
 
