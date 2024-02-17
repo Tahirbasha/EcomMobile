@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Product, ProductsPayload } from "../types/ecom-types";
+import { ProductItem, ProductsPayload } from "../types/ecom-types";
 
 export const login = async (loginCredentials: { username: string, password: string }) => {
   const url = "https://apis.ccbp.in/login";
@@ -24,7 +24,7 @@ export const getAllProducts = async (payload: ProductsPayload) => {
   const response = await fetch(apiUrl, options)
   if (response.ok) {
     const fetchedData = await response.json()
-    const updatedData: Product[] = fetchedData.products.map((product: any) => ({
+    const updatedData: ProductItem[] = fetchedData.products.map((product: any) => ({
       title: product.title,
       brand: product.brand,
       price: product.price,
@@ -50,7 +50,7 @@ export const getPrimeProducts = async () => {
   const response = await fetch(apiUrl, options)
   if (response.ok) {
     const fetchedData = await response.json()
-    const updatedData: Product[] = fetchedData.prime_deals.map((product: any) => ({
+    const updatedData: ProductItem[] = fetchedData.prime_deals.map((product: any) => ({
       title: product.title,
       brand: product.brand,
       price: product.price,

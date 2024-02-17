@@ -1,30 +1,15 @@
-import React, { useEffect } from "react";
-import { View, Text, Button, ScrollView, Image, TouchableOpacity } from "react-native";
-import { homeScreenStyles } from "../styles/home-screen-styles";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from '@expo/vector-icons';
 import Home from "./home";
-import Products from "./products";
 import Cart from "./cart";
+import ProductPage from "./products-page";
+import Account from "./account-details";
 
 const Tab = createBottomTabNavigator();
 
-const HomePage = (props: {navigation: any}) => {
+const HomePage = () => {
 
-  const handleLogout = () => {
-    props.navigation.navigate("Login");
-  };
-
-  useEffect(() => {
-    getAuthToken();
-  });
-  const getAuthToken = async () => {
-    const authToken = await AsyncStorage.getItem('Token');
-  }
-
-  // const Cart = () => <Text>Cart</Text>;
-  const Account = () => <Text>Account</Text>;
   
   return (
     <Tab.Navigator 
@@ -44,7 +29,7 @@ const HomePage = (props: {navigation: any}) => {
       />
       <Tab.Screen 
         name="Products" 
-        component={Products} 
+        component={ProductPage} 
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="storefront" color={color} size={size} />

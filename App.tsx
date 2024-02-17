@@ -21,12 +21,7 @@ const App: React.FC = () => {
         <Stack.Screen
           name="HomePage"
           component={Homepage}
-          options={{ header: () => <HeaderImage /> }}
-        />
-        <Stack.Screen
-          name="ProductDetails"
-          component={ProductDetails}
-          options={{ header: () => <HeaderImage /> }}
+          options={{ header: () => <HeaderImage page="Home"/> }}
         />
       </Stack.Navigator>
       <StatusBar

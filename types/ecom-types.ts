@@ -5,7 +5,7 @@ export interface ProductsPayload {
     activeRatingId: string;
 };
 
-export interface Product {
+export interface ProductItem {
     id: number;
     title: string;
     brand: string;
@@ -16,7 +16,7 @@ export interface Product {
 };
 
 export interface ProductState {
-    products: Product[];
+    products: ProductItem[];
     isLoading: boolean;
 }
 
@@ -34,5 +34,5 @@ export interface ProductDetailedInfo {
 
 export interface ProductDetailsState {
     productDetails: ProductDetailedInfo;
-    similarProducts?: ProductDetailedInfo;
+    similarProducts?: ProductItem[];
 }
