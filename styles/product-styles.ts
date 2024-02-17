@@ -192,5 +192,18 @@ export const product = StyleSheet.create({
         color: '#616e7c',
         fontSize: 25,
         fontWeight: '600',
+    },
+    addingToCart: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-evenly'
+    },
+    priceAndRemove: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    removeTag: {
+        color: 'red',
+        marginHorizontal: 30
     }
 });

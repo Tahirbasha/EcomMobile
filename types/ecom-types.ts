@@ -36,3 +36,16 @@ export interface ProductDetailsState {
     productDetails: ProductDetailedInfo;
     similarProducts?: ProductItem[];
 }
+
+export interface CartItem {
+    id: number;
+    title: string;
+    imageUrl: string;
+    brand: string;
+    quantity: number;
+    price: number;
+}
+
+export interface rootState {
+    cartDetails: CartItem[];
+}

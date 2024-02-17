@@ -5,12 +5,15 @@ import Home from "./home";
 import Cart from "./cart";
 import ProductPage from "./products-page";
 import Account from "./account-details";
+import { useSelector } from "react-redux";
+import { rootState } from "../types/ecom-types";
 
 const Tab = createBottomTabNavigator();
 
 const HomePage = () => {
 
-  
+  const cartItems = useSelector((state: rootState) => state.cartDetails);
+
   return (
     <Tab.Navigator 
         initialRouteName="Home"
@@ -39,6 +42,7 @@ const HomePage = () => {
       <Tab.Screen 
         name="Cart" 
         component={Cart} 
+        initialParams={{cartItems}}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="cart" color={color} size={size} />
