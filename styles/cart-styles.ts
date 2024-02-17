@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 const cartStyles = StyleSheet.create({
-    cartContainer: {
+    cartEmptyContainer: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
@@ -9,6 +9,9 @@ const cartStyles = StyleSheet.create({
     emptyCartImg: {
         height: 250,
         width: 220
+    },
+    cartContainer: {
+        paddingVertical: 10
     }
 });
 

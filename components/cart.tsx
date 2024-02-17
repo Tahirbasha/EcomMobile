@@ -33,7 +33,7 @@ const Cart = (props: { navigation: any, route: any }) => {
 
     if (!cartItems || !cartItems.length) {
         return (
-            <View style={cartStyles.cartContainer}>
+            <View style={cartStyles.cartEmptyContainer}>
                 <Image
                     source={{ uri: 'https://assets.ccbp.in/frontend/react-js/nxt-trendz-empty-cart-img.png' }}
                     style={cartStyles.emptyCartImg}
@@ -46,7 +46,7 @@ const Cart = (props: { navigation: any, route: any }) => {
         );
     }
     return (
-        <ScrollView>
+        <ScrollView style={cartStyles.cartContainer}>
             {localCart.map((cartItem, index) => {
                 return <CartItems
                     key={index}
