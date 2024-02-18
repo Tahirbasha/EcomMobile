@@ -2,25 +2,32 @@ import { StyleSheet } from "react-native";
 
 
 export const product = StyleSheet.create({
+    productsMainContainer: {
+        flex: 1,
+        borderTopWidth: 1,
+        backgroundColor: '#fff',
+        borderTopColor: '#f5f0f0',
+        paddingVertical: 10,
+        paddingBottom: '45%'
+    },
     primeDealsContainer: {
-        // borderWidth: 2,
-        // flex: 1,
         height: 150,
         marginBottom: 5
     },
     primeDealsHeading: {
         fontSize: 20,
+        color: '#475569',
+        fontFamily: "Roboto",
+        fontWeight: '500',
     },
     primeProductCard: {
         height: 120,
-        // borderWidth: 2,
         margin: 10,
         borderRadius: 5
     },
     productCard: {
         flexDirection: 'row',
         height: 200,
-        // borderWidth: 1,
         marginVertical: 10,
         borderRadius: 5,
         backgroundColor: '#f7f7ed'
@@ -30,7 +37,6 @@ export const product = StyleSheet.create({
         width: 110
     },
     productImg: {
-        // flex: 1,
         width: '55%',
         marginRight: 5
     },
@@ -40,7 +46,7 @@ export const product = StyleSheet.create({
         justifyContent: 'space-evenly'
     },
     productTitle: {
-        fontSize:20
+        fontSize: 20
     },
     productBrand: {
         fontSize: 20,
@@ -55,12 +61,13 @@ export const product = StyleSheet.create({
         fontWeight: '600',
         color: '#fff'
     },
-    productContainer : {
-        paddingHorizontal: 15
+    productContainer: {
+        paddingHorizontal: 15,
+        paddingBottom: '25%'
     },
     ratingContainer: {
         flexDirection: 'row',
-        alignItems:'center',
+        alignItems: 'center',
         backgroundColor: '#3b82f6',
         padding: 5,
         borderRadius: 5,
@@ -72,21 +79,20 @@ export const product = StyleSheet.create({
         width: 12
     },
     productDetailsContainer: {
-        flex: 1, 
-        backgroundColor: '#fff', 
-        borderTopWidth: 1, 
+        flex: 1,
+        backgroundColor: '#fff',
+        borderTopWidth: 1,
         borderTopColor: '#f5f0f0',
         paddingHorizontal: 20,
         paddingBottom: '20%'
     },
-    detailedProductImg : {
+    detailedProductImg: {
         height: 350,
         width: 350,
         borderRadius: 10,
     },
     detailedProductContainer: {
         alignItems: 'center',
-        // paddingHorizontal: 15,
         paddingVertical: 25,
     },
     detailedProductNameAndCost: {
@@ -106,11 +112,11 @@ export const product = StyleSheet.create({
     },
     detailedProductRatingContainer: {
         flexDirection: 'row',
-        alignItems:'center',
+        alignItems: 'center',
     },
     detailedProductRatings: {
         flexDirection: 'row',
-        alignItems:'center',
+        alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#3b82f6',
         padding: 8,
@@ -118,7 +124,7 @@ export const product = StyleSheet.create({
         width: '20%',
         marginRight: 8
     },
-    detailedProductRatingCount : {
+    detailedProductRatingCount: {
         color: '#fff',
         fontSize: 18,
         fontWeight: '500',
@@ -177,7 +183,7 @@ export const product = StyleSheet.create({
         paddingVertical: 12,
         marginTop: 12,
         borderRadius: 5,
-        width: '25%'  
+        width: '25%'
     },
     addToCartTitle: {
         color: '#fff',
@@ -205,5 +211,62 @@ export const product = StyleSheet.create({
     removeTag: {
         color: 'red',
         marginHorizontal: 30
+    },
+    categoryContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        marginVertical: 12
+    },
+    categoryItem: {
+        borderWidth: 0.5,
+        borderRadius: 10,
+        padding: 5,
+    },
+    selectedCategory: {
+        backgroundColor: '#3b82f6',
+        color: '#fff',
+        borderWidth: 0
+    },
+    category: {
+        backgroundColor: 'transparent'
+    },
+    filterContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 10,
+        paddingHorizontal: 10
+    },
+    inputContainer: {
+        width: '55%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderColor: 'gray',
+        borderWidth: 0.5,
+        borderRadius: 8,
+        paddingHorizontal: 5,
+    },
+    inputBar: {
+        width: '75%',
+    },
+    clearButton: {
+
+    },
+    dropdown: {
+        width: '40%',
+        padding: 8,
+        height: 30,
+        borderColor: 'gray',
+        borderWidth: 0.5,
+        borderRadius: 8
+    },
+    noProductsContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 30
+    },
+    noProductsFound: {
+        fontSize: 20
     }
 });

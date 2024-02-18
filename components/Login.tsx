@@ -5,8 +5,8 @@ import { login } from "../apis/ecom-apis";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('admin');
+  const [password, setPassword] = useState('abcd');
   const [errorMsg, setErrorMsg] = useState();
 
   const handleLogin = async () => {

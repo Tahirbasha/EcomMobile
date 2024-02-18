@@ -33,6 +33,8 @@ export const getAllProducts = async (payload: ProductsPayload) => {
       rating: product.rating,
     }));
     return updatedData;
+  } else {
+    return false;
   }
 };
 

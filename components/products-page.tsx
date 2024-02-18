@@ -2,8 +2,6 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Products from "./products";
 import ProductDetails from "./product-details";
-import { Text } from "react-native";
-import { HeaderImage } from "./header-image";
 
 const ProductStack = createNativeStackNavigator();
 
@@ -14,7 +12,7 @@ const ProductPage = () => {
             <ProductStack.Screen
                 name="ProductsList"
                 component={Products}
-                options={{ headerShown: false }}
+                options={{ headerShown: false}}
                 />
             <ProductStack.Screen
                 name="ProductDetails"

@@ -7,6 +7,7 @@ import ProductPage from "./products-page";
 import Account from "./account-details";
 import { useSelector } from "react-redux";
 import { rootState } from "../types/ecom-types";
+import CustomCart from "./custom-cart";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,7 +46,11 @@ const HomePage = () => {
         initialParams={{cartItems}}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="cart" color={color} size={size} />
+            <CustomCart
+              color={color}
+              size={size}
+              cartItemsCount={cartItems.length}
+            />
           )
         }}
       />

@@ -10,7 +10,6 @@ export const AccountStyles = StyleSheet.create({
     },
     profilePicContainer: {
         flex: 0.3,
-        // borderWidth: 2,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -20,17 +19,19 @@ export const AccountStyles = StyleSheet.create({
     accountSettings : {
         flex: 0.6,
         paddingLeft: 20,
-        // borderWidth: 2,
 
     },
     accountOption: {
         marginVertical: 10,
+
+        flexDirection: 'row',
+        alignItems:'center',
+
+    },
+    accountOptionText: {
         fontSize: 20,
-        // borderWidth: 1,
-        borderColor: '#f5f0f0',
         fontWeight: '500',
         color: '#0967d2',
-        alignItems:'center'
-
+        marginHorizontal: 5
     }
 })

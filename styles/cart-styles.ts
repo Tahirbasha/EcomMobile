@@ -11,7 +11,11 @@ const cartStyles = StyleSheet.create({
         width: 220
     },
     cartContainer: {
-        paddingVertical: 10
+        borderTopWidth: 1,
+        borderTopColor: '#f5f0f0',
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        backgroundColor: '#fff',
     }
 });
 

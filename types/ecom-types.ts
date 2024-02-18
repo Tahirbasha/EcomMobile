@@ -18,6 +18,9 @@ export interface ProductItem {
 export interface ProductState {
     products: ProductItem[];
     isLoading: boolean;
+    isFetchFailed: boolean;
+    searchByValue: string;
+    searchBy: string;
 }
 
 export interface ProductDetailedInfo {

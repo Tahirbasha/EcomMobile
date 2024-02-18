@@ -19,38 +19,15 @@ export const categoryOptions = [
       name: 'Toys',
       categoryId: '5',
     },
-  ]
+  ];
   
   export const sortbyOptions = [
     {
-      optionId: 'PRICE_HIGH',
-      displayText: 'Price (High-Low)',
+      label: 'Price (High-Low)',
+      value: 'PRICE_HIGH',
     },
     {
-      optionId: 'PRICE_LOW',
-      displayText: 'Price (Low-High)',
+      label: 'Price (Low-High)',
+      value: 'PRICE_LOW',
     },
-  ]
-  
-  export const ratingsList = [
-    {
-      ratingId: '4',
-      imageUrl:
-        'https://assets.ccbp.in/frontend/react-js/rating-four-stars-img.png',
-    },
-    {
-      ratingId: '3',
-      imageUrl:
-        'https://assets.ccbp.in/frontend/react-js/rating-three-stars-img.png',
-    },
-    {
-      ratingId: '2',
-      imageUrl:
-        'https://assets.ccbp.in/frontend/react-js/rating-two-stars-img.png',
-    },
-    {
-      ratingId: '1',
-      imageUrl:
-        'https://assets.ccbp.in/frontend/react-js/rating-one-star-img.png',
-    },
-  ]
+  ];
