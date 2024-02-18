@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { product } from "../styles/product-styles";
-import { CartItem, rootState } from "../types/ecom-types";
+import { CartItem } from "../types/ecom-types";
 import { useNavigation } from "@react-navigation/native";
-import { useDispatch, useSelector } from "react-redux";
-import { addProductToCart } from "../store/reducer";
 
 const CartItems = (props: { product: CartItem, handleRemoveProduct: (productId: number) => void }) => {
 

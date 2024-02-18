@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, SafeAreaView, Image, View, Button, TouchableOpacity } from 'react-native';
+import { Text, SafeAreaView, Image, View, Button } from 'react-native';
 import { homeScreenStyles } from '../styles/home-screen-styles';
 
 

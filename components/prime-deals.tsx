@@ -1,39 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { getPrimeProducts } from '../apis/ecom-apis';
-import { ProductState } from '../types/ecom-types';
+import { ProductItem } from '../types/ecom-types';
 import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import { product } from '../styles/product-styles';
 import { useNavigation } from '@react-navigation/native';
 
 const PrimeDeals = () => {
     const navigation = useNavigation<any>();
-    const [primeDealsState, setPrimeDealsState] = useState<ProductState>({ products: [], isLoading: false });
+    const [primeDealsState, setPrimeDealsState] = useState<{ primeProducts: ProductItem[]}>({ primeProducts: [] });
 
     useEffect(() => {
-        setPrimeDealsState({ ...primeDealsState, isLoading: true });
+        setPrimeDealsState({ ...primeDealsState});
         getPrimeDeals();
     }, []);
 
     const getPrimeDeals = async () => {
         const primeProducts = await getPrimeProducts();
         if (primeProducts) {
-            setPrimeDealsState({ products: primeProducts, isLoading: false });
+            setPrimeDealsState({ primeProducts});
         } else {
-            setPrimeDealsState({ ...primeDealsState, isLoading: false });
+            setPrimeDealsState({ ...primeDealsState,});
         }
 
     }
     const handleProductClick = (productId: number) => {
         navigation.navigate('ProductDetails', { productId });
     }
-    if (primeDealsState.isLoading) {
-        return <Text>Loading...</Text>;
-    }
     return (
         <View style={product.primeDealsContainer}>
             <Text style={product.primeDealsHeading}>Exclusive Prime Deals</Text>
             <FlatList
-                data={primeDealsState.products}
+                data={primeDealsState.primeProducts}
                 renderItem={(item) => {
                     return (
                         <TouchableOpacity onPress={() => handleProductClick(item.item.id)}>
@@ -42,7 +39,6 @@ const PrimeDeals = () => {
                                     source={{ uri: item.item.imageUrl }}
                                     style={product.primeProductImg}
                                 />
-                                {/* <Text>{item.item.title}</Text> */}
                             </View>
                         </TouchableOpacity>
                     );

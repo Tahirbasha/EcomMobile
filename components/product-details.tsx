@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ActivityIndicator, Button, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { useState, useEffect, useCallback } from 'react';
+import { ActivityIndicator, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { useState, useEffect } from 'react';
 import { getProductDetails } from '../apis/ecom-apis';
 import { CartItem, ProductDetailedInfo, ProductDetailsState, rootState } from '../types/ecom-types';
 import { product } from '../styles/product-styles';
@@ -8,6 +8,7 @@ import { AntDesign } from '@expo/vector-icons';
 import Product from './product';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProductToCart } from '../store/reducer';
+import Loader from './loader';
 
 const ProductDetails = (props: { route: any, navigation: any }) => {
 
@@ -71,7 +72,7 @@ const ProductDetails = (props: { route: any, navigation: any }) => {
         return selectedProduct;
     }
     if (isLoading) {
-        return <Text>Loading</Text>;
+        return <Loader/>;
     } else if (productDetailsState && productDetailsState.productDetails) {
         const { productDetails } = productDetailsState;
         return (
